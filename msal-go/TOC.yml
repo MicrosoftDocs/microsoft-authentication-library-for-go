@@ -1,5 +1,7 @@
 - name: Microsoft Authentication Library for Go
   href: index.md
+- name: Design Guide
+  href: design.md
 - name: Packages
   items:
   - name: public
