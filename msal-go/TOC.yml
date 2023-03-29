@@ -2,6 +2,8 @@
   href: index.md
 - name: Design Guide
   href: design.md
+- name: Error Design
+  href: error-design.md
 - name: Packages
   items:
   - name: public
