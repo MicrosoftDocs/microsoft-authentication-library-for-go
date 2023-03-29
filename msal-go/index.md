@@ -15,7 +15,9 @@ To install Go, visit [this link](https://golang.org/dl/).
 
 ### Installing MSAL Go
 
-`go get -u github.com/AzureAD/microsoft-authentication-library-for-go/`
+```bash
+go get -u github.com/AzureAD/microsoft-authentication-library-for-go/
+```
 
 ## Usage
 
