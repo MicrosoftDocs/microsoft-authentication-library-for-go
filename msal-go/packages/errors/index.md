@@ -6,17 +6,6 @@
 import "github.com/AzureAD/microsoft-authentication-library-for-go/apps/errors"
 ```
 
-## Index
-
-- [func As(err error, target interface{}) bool](<#func-as>)
-- [func Is(err, target error) bool](<#func-is>)
-- [func New(text string) error](<#func-new>)
-- [func Verbose(err error) string](<#func-verbose>)
-- [type CallErr](<#type-callerr>)
-  - [func (e CallErr) Error() string](<#func-callerr-error>)
-  - [func (e CallErr) Verbose() string](<#func-callerr-verbose>)
-
-
 ## func As
 
 ```go

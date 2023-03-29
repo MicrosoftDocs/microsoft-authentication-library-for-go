@@ -6,19 +6,9 @@
 import "github.com/AzureAD/microsoft-authentication-library-for-go/apps/cache"
 ```
 
-Package cache allows third parties to implement external storage for caching token data for distributed systems or multiple local applications access.
+Package `cache` allows third parties to implement external storage for caching token data for distributed systems or multiple local applications access.
 
 The data stored and extracted will represent the entire cache. Therefore it is recommended one msal instance per user. This data is considered opaque and there are no guarantees to implementers on the format being passed.
-
-## Index
-
-- [type ExportHints](<#type-exporthints>)
-- [type ExportReplace](<#type-exportreplace>)
-- [type Marshaler](<#type-marshaler>)
-- [type ReplaceHints](<#type-replacehints>)
-- [type Serializer](<#type-serializer>)
-- [type Unmarshaler](<#type-unmarshaler>)
-
 
 ## type ExportHints
 

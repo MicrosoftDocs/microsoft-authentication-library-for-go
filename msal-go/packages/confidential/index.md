@@ -6,76 +6,7 @@
 import "github.com/AzureAD/microsoft-authentication-library-for-go/apps/confidential"
 ```
 
-Package confidential provides a client for authentication of "confidential" applications. A "confidential" application is defined as an app that run on servers. They are considered difficult to access and for that reason capable of keeping an application secret. Confidential clients can hold configuration\-time secrets.
-
-## Index
-
-- [func AutoDetectRegion() string](<#func-autodetectregion>)
-- [func CertFromPEM(pemData []byte, password string) ([]*x509.Certificate, crypto.PrivateKey, error)](<#func-certfrompem>)
-- [func WithChallenge(challenge string) interface {
-    AcquireByAuthCodeOption
-    options.CallOption
-}](<#func-withchallenge>)
-- [func WithClaims(claims string) interface {
-    AcquireByAuthCodeOption
-    AcquireByCredentialOption
-    AcquireOnBehalfOfOption
-    AcquireSilentOption
-    AuthCodeURLOption
-    options.CallOption
-}](<#func-withclaims>)
-- [func WithDomainHint(domain string) interface {
-    AuthCodeURLOption
-    options.CallOption
-}](<#func-withdomainhint>)
-- [func WithLoginHint(username string) interface {
-    AuthCodeURLOption
-    options.CallOption
-}](<#func-withloginhint>)
-- [func WithSilentAccount(account Account) interface {
-    AcquireSilentOption
-    options.CallOption
-}](<#func-withsilentaccount>)
-- [func WithTenantID(tenantID string) interface {
-    AcquireByAuthCodeOption
-    AcquireByCredentialOption
-    AcquireOnBehalfOfOption
-    AcquireSilentOption
-    AuthCodeURLOption
-    options.CallOption
-}](<#func-withtenantid>)
-- [type Account](<#type-account>)
-- [type AcquireByAuthCodeOption](<#type-acquirebyauthcodeoption>)
-- [type AcquireByCredentialOption](<#type-acquirebycredentialoption>)
-- [type AcquireOnBehalfOfOption](<#type-acquireonbehalfofoption>)
-- [type AcquireSilentOption](<#type-acquiresilentoption>)
-- [type AssertionRequestOptions](<#type-assertionrequestoptions>)
-- [type AuthCodeURLOption](<#type-authcodeurloption>)
-- [type AuthResult](<#type-authresult>)
-- [type Client](<#type-client>)
-  - [func New(authority, clientID string, cred Credential, options ...Option) (Client, error)](<#func-new>)
-  - [func (cca Client) Account(ctx context.Context, accountID string) (Account, error)](<#func-client-account>)
-  - [func (cca Client) AcquireTokenByAuthCode(ctx context.Context, code string, redirectURI string, scopes []string, opts ...AcquireByAuthCodeOption) (AuthResult, error)](<#func-client-acquiretokenbyauthcode>)
-  - [func (cca Client) AcquireTokenByCredential(ctx context.Context, scopes []string, opts ...AcquireByCredentialOption) (AuthResult, error)](<#func-client-acquiretokenbycredential>)
-  - [func (cca Client) AcquireTokenOnBehalfOf(ctx context.Context, userAssertion string, scopes []string, opts ...AcquireOnBehalfOfOption) (AuthResult, error)](<#func-client-acquiretokenonbehalfof>)
-  - [func (cca Client) AcquireTokenSilent(ctx context.Context, scopes []string, opts ...AcquireSilentOption) (AuthResult, error)](<#func-client-acquiretokensilent>)
-  - [func (cca Client) AuthCodeURL(ctx context.Context, clientID, redirectURI string, scopes []string, opts ...AuthCodeURLOption) (string, error)](<#func-client-authcodeurl>)
-  - [func (cca Client) RemoveAccount(ctx context.Context, account Account) error](<#func-client-removeaccount>)
-- [type Credential](<#type-credential>)
-  - [func NewCredFromAssertionCallback(callback func(context.Context, AssertionRequestOptions) (string, error)) Credential](<#func-newcredfromassertioncallback>)
-  - [func NewCredFromCert(certs []*x509.Certificate, key crypto.PrivateKey) (Credential, error)](<#func-newcredfromcert>)
-  - [func NewCredFromSecret(secret string) (Credential, error)](<#func-newcredfromsecret>)
-  - [func NewCredFromTokenProvider(provider func(context.Context, TokenProviderParameters) (TokenProviderResult, error)) Credential](<#func-newcredfromtokenprovider>)
-- [type Option](<#type-option>)
-  - [func WithAzureRegion(val string) Option](<#func-withazureregion>)
-  - [func WithCache(accessor cache.ExportReplace) Option](<#func-withcache>)
-  - [func WithClientCapabilities(capabilities []string) Option](<#func-withclientcapabilities>)
-  - [func WithHTTPClient(httpClient ops.HTTPClient) Option](<#func-withhttpclient>)
-  - [func WithInstanceDiscovery(enabled bool) Option](<#func-withinstancediscovery>)
-  - [func WithX5C() Option](<#func-withx5c>)
-- [type TokenProviderParameters](<#type-tokenproviderparameters>)
-- [type TokenProviderResult](<#type-tokenproviderresult>)
-
+Package `confidential` provides a client for authentication of "confidential" applications. A "confidential" application is defined as an app that run on servers. They are considered difficult to access and for that reason capable of keeping an application secret. Confidential clients can hold configuration\-time secrets.
 
 ## func AutoDetectRegion
 

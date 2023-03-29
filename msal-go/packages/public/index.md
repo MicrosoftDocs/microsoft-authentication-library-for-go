@@ -6,78 +6,7 @@
 import "github.com/AzureAD/microsoft-authentication-library-for-go/apps/public"
 ```
 
-Package public provides a client for authentication of "public" applications. A "public" application is defined as an app that runs on client devices \(android, ios, windows, linux, ...\). These devices are "untrusted" and access resources via web APIs that must authenticate.
-
-## Index
-
-- [func WithChallenge(challenge string) interface {
-    AcquireByAuthCodeOption
-    options.CallOption
-}](<#func-withchallenge>)
-- [func WithClaims(claims string) interface {
-    AcquireByAuthCodeOption
-    AcquireByDeviceCodeOption
-    AcquireByUsernamePasswordOption
-    AcquireInteractiveOption
-    AcquireSilentOption
-    AuthCodeURLOption
-    options.CallOption
-}](<#func-withclaims>)
-- [func WithDomainHint(domain string) interface {
-    AcquireInteractiveOption
-    AuthCodeURLOption
-    options.CallOption
-}](<#func-withdomainhint>)
-- [func WithLoginHint(username string) interface {
-    AcquireInteractiveOption
-    AuthCodeURLOption
-    options.CallOption
-}](<#func-withloginhint>)
-- [func WithRedirectURI(redirectURI string) interface {
-    AcquireInteractiveOption
-    options.CallOption
-}](<#func-withredirecturi>)
-- [func WithSilentAccount(account Account) interface {
-    AcquireSilentOption
-    options.CallOption
-}](<#func-withsilentaccount>)
-- [func WithTenantID(tenantID string) interface {
-    AcquireByAuthCodeOption
-    AcquireByDeviceCodeOption
-    AcquireByUsernamePasswordOption
-    AcquireInteractiveOption
-    AcquireSilentOption
-    AuthCodeURLOption
-    options.CallOption
-}](<#func-withtenantid>)
-- [type Account](<#type-account>)
-- [type AcquireByAuthCodeOption](<#type-acquirebyauthcodeoption>)
-- [type AcquireByDeviceCodeOption](<#type-acquirebydevicecodeoption>)
-- [type AcquireByUsernamePasswordOption](<#type-acquirebyusernamepasswordoption>)
-- [type AcquireInteractiveOption](<#type-acquireinteractiveoption>)
-- [type AcquireSilentOption](<#type-acquiresilentoption>)
-- [type AuthCodeURLOption](<#type-authcodeurloption>)
-- [type AuthResult](<#type-authresult>)
-- [type Client](<#type-client>)
-  - [func New(clientID string, options ...Option) (Client, error)](<#func-new>)
-  - [func (pca Client) Accounts(ctx context.Context) ([]Account, error)](<#func-client-accounts>)
-  - [func (pca Client) AcquireTokenByAuthCode(ctx context.Context, code string, redirectURI string, scopes []string, opts ...AcquireByAuthCodeOption) (AuthResult, error)](<#func-client-acquiretokenbyauthcode>)
-  - [func (pca Client) AcquireTokenByDeviceCode(ctx context.Context, scopes []string, opts ...AcquireByDeviceCodeOption) (DeviceCode, error)](<#func-client-acquiretokenbydevicecode>)
-  - [func (pca Client) AcquireTokenByUsernamePassword(ctx context.Context, scopes []string, username, password string, opts ...AcquireByUsernamePasswordOption) (AuthResult, error)](<#func-client-acquiretokenbyusernamepassword>)
-  - [func (pca Client) AcquireTokenInteractive(ctx context.Context, scopes []string, opts ...AcquireInteractiveOption) (AuthResult, error)](<#func-client-acquiretokeninteractive>)
-  - [func (pca Client) AcquireTokenSilent(ctx context.Context, scopes []string, opts ...AcquireSilentOption) (AuthResult, error)](<#func-client-acquiretokensilent>)
-  - [func (pca Client) AuthCodeURL(ctx context.Context, clientID, redirectURI string, scopes []string, opts ...AuthCodeURLOption) (string, error)](<#func-client-authcodeurl>)
-  - [func (pca Client) RemoveAccount(ctx context.Context, account Account) error](<#func-client-removeaccount>)
-- [type DeviceCode](<#type-devicecode>)
-  - [func (d DeviceCode) AuthenticationResult(ctx context.Context) (AuthResult, error)](<#func-devicecode-authenticationresult>)
-- [type DeviceCodeResult](<#type-devicecoderesult>)
-- [type Option](<#type-option>)
-  - [func WithAuthority(authority string) Option](<#func-withauthority>)
-  - [func WithCache(accessor cache.ExportReplace) Option](<#func-withcache>)
-  - [func WithClientCapabilities(capabilities []string) Option](<#func-withclientcapabilities>)
-  - [func WithHTTPClient(httpClient ops.HTTPClient) Option](<#func-withhttpclient>)
-  - [func WithInstanceDiscovery(enabled bool) Option](<#func-withinstancediscovery>)
-
+Package `public` provides a client for authentication of "public" applications. A "public" application is defined as an app that runs on client devices \(android, ios, windows, linux, ...\). These devices are "untrusted" and access resources via web APIs that must authenticate.
 
 ## func WithChallenge
 
