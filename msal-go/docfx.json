@@ -42,9 +42,35 @@
     "globalMetadata": {
       "breadcrumb_path": "/entra/msal/go/breadcrumb/toc.json",
       "extendBreadcrumb": true,
-      "feedback_system": "None"
+      "uhfHeaderId": "MSDocsHeader-Entra",
+      "feedback_system": "GitHub",
+      "feedback_github_repo": "MicrosoftDocs/microsoft-authentication-library-for-go",
+      "feedback_product_url": "https://github.com/AzureAD/microsoft-authentication-library-for-go/issues",
+      "recommendations": true,
+      "recommendation_types": ["Training", "Certification"]
     },
-    "fileMetadata": {},
+    "fileMetadata": {
+      "author": {
+        "*.md": "localden",
+        "*/**.md": "localden"
+      },
+      "ms.author": {
+        "*.md": "ddelimarsky",
+        "*/**.md": "ddelimarsky"
+      },
+      "ms.service": {
+        "*.md": "active-directory",
+        "*/**.md": "active-directory"
+      },
+      "titleSuffix": {
+        "*.md": "Microsoft Authentication Library for Go",
+        "*/**.md": "Microsoft Authentication Library for Go"
+      },
+      "ms.topic": {
+        "*.md": "conceptual",
+        "*/**.md": "conceptual"
+      }
+    },
     "template": [],
     "dest": "msal-go"
   }
