@@ -9,15 +9,15 @@ description: "Error design guidelines for the Microsoft Authentication Library f
 
 Errors in MSAL are intended for app developers to troubleshoot and not for displaying to end-users.
 
-### Go error handling vs other MSAL languages
+### Go error handling vs. other languages
 
-Most modern languages use exception based errors. Simply put, you "throw" an exception and it must be caught at some routine in the upper stack or it will eventually crash the program.
+Most modern languages use exception-based errors. Simply put, you "throw" an exception and it must be caught at some routine in the upper stack or it will eventually crash the program.
 
 Go doesn't use exceptions, instead it relies on multiple return values, one of which can be the builtin error interface type. It is up to the user to decide what to do.
 
 ### Go custom error types
 
-Errors can be created in Go by simply using errors.New() or fmt.Errorf() to create an "error".
+Errors can be created in Go by using `errors.New()` or `fmt.Errorf()` to create an "error".
 
 Custom errors can be created in multiple ways. One of the more robust ways is simply to satisfy the error interface:
 
@@ -30,17 +30,17 @@ func (m MyCustomErr) Error() string { // This implements "error"
 }
 ```
 
-### MSAL Error Goals
+### MSAL error goals
 
 - Provide diagnostics to the user and for tickets that can be used to track down bugs or client misconfigurations
 - Detect errors that are transitory and can be retried
 - Allow the user to identify certain errors that the program can respond to, such a informing the user for the need to do an enrollment
   
-## Implementing Client Side Errors
+## Implementing client-side errors
 
 Client side errors indicate a misconfiguration or passing of bad arguments that is non-recoverable. Retrying isn't possible.
 
-These errors can simply be standard Go errors created by errors.New() or fmt.Errorf(). If down the line we need a custom error, we can introduce it, but for now the error messages just need to be clear on what the issue was.
+These errors can simply be standard Go errors created by `errors.New()` or `fmt.Errorf()`. If down the line we need a custom error, we can introduce it, but for now the error messages just need to be clear on what the issue was.
 
 ## Implementing Service Side Errors
 
@@ -81,15 +81,15 @@ if errors.As(err, &callErr) {
 }
 ```
 
-We provide a Verbose() function that can retrieve the most verbose message from any error we provide:
+We provide a `Verbose()` function that can retrieve the most verbose message from any error we provide:
 
 ```go
 fmt.Println(errors.Verbose(err))
 ```
 
-If further differentiation is required, we can add custom errors that use Go error wrapping on top of CallErr to achieve our diagnostic goals (such as detecting when to retry a call due to transient errors).  
+If further differentiation is required, we can add custom errors that use Go error wrapping on top of `CallErr` to achieve our diagnostic goals (such as detecting when to retry a call due to transient errors).  
 
-CallErr is always thrown from the comm package (which handles all http requests) and looks similar to:
+`CallErr` is always thrown from the comm package (which handles all HTTP requests) and looks similar to:
 
 ```go
 return nil, errors.CallErr{
@@ -103,6 +103,6 @@ return nil, errors.CallErr{
 
 The ability to retry calls needs to have centralized responsibility. Either the user is doing it or the client is doing it.  
 
-If the user should be responsible, our errors package will include a CanRetry() function that will inform the user if the error provided to them is retryable.  This is based on the http error code and possibly the type of error that was returned.  It would also include a sleep time if the server returned an amount of time to wait.
+If the user should be responsible, our errors package will include a `CanRetry()` function that will inform the user if the error provided to them is retryable.  This is based on the HTTP error code and possibly the type of error that was returned.  It would also include a sleep time if the server returned an amount of time to wait.
 
 Otherwise we will do this internally and retries will be left to us.
