@@ -74,7 +74,7 @@ Acquiring tokens with MSAL Go follows this general three step pattern. There mig
 1. If there is no suitable token in the cache, or you choose to skip this step, now we can send a request to AAD to obtain a token.
 
     ```go
-    result, err := publicClientApp.AcquireToken"ByOneofTheActualMethods"([]string{"your_scope"}, ...(other parameters depending on the function))
+    result, err := publicClientApp.AcquireTokenByOneofTheActualMethods([]string{"your_scope"}, ...(other parameters depending on the function))
     if err != nil {
         log.Fatal(err)
     }
