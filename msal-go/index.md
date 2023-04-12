@@ -6,7 +6,7 @@ description: "An introduction to using Microsoft Authentication Library (MSAL) f
 # Microsoft Authentication Library (MSAL) for Go
 
 >[!NOTE]
-> MSAL for Go is a new addition to the MSAL family of libraries, has been made available in production ready preview to gauge customer interest and to gather feedback from the community. We welcome all contributors (see [CONTRIBUTING.md](https://github.com/AzureAD/microsoft-authentication-library-for-go/blob/dev/CONTRIBUTING.md)) to help us grow our list of supported MSAL SDKs.**
+> icrosoft Authentication Library (MSAL) for Go is a new addition to the MSAL family of libraries. It has been made available in production-ready preview to gauge customer interest and to gather feedback from the community. We welcome all contributors (see [contribution guidelines in the library repository](https://github.com/AzureAD/microsoft-authentication-library-for-go/blob/dev/CONTRIBUTING.md)) to help us improve the library.**
 
 The Microsoft Authentication Library (MSAL) for Go is part of the [Microsoft identity platform for developers](https://aka.ms/aaddevv2). It allows you to sign in users or apps with Microsoft identities ([Azure AD](https://azure.microsoft.com/services/active-directory/) and [Microsoft Accounts](https://account.microsoft.com)) and obtain tokens to call APIs such as [Microsoft Graph](https://graph.microsoft.io/) or your own APIs registered with the Microsoft identity platform. It is built using industry standard OAuth2 and OpenID Connect protocols.
 
@@ -28,7 +28,7 @@ go get -u github.com/AzureAD/microsoft-authentication-library-for-go/
 
 Before using MSAL Go, you will need to [register your application with the Microsoft identity platform](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v2-register-an-app).
 
-### Public Surface
+### Public surface
 
 The Public API of the library can be found in the following directories under `apps`.
 
@@ -85,22 +85,22 @@ You can view the [dev apps](https://github.com/AzureAD/microsoft-authentication-
 
 ## Releases
 
-The list of [releases](https://github.com/AzureAD/microsoft-authentication-library-for-go/releases)
+For a full list of library releases, refer to the [Releases](https://github.com/AzureAD/microsoft-authentication-library-for-go/releases) section in the library source code repository.
 
-## Community Help and Support
+## Community help and support
 
-We use [Stack Overflow](http://stackoverflow.com/questions/tagged/msal) to work with the community on supporting Azure Active Directory and its SDKs, including this one! We highly recommend you ask your questions on Stack Overflow (we're all on there!) Also browse existing issues to see if someone has had your question before. Please use the "msal" tag when asking your questions.
+We use [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-ad-msal) to work with the community on supporting Azure Active Directory and its SDKs, including this one! We highly recommend you ask your questions on Stack Overflow. You can also browse existing questions to see if someone has encountered the problem before. Please use the `azure-ad-msal` tag when asking your questions.
 
-If you find and bug or have a feature request, please raise the issue on [GitHub Issues](https://github.com/AzureAD/microsoft-authentication-library-for-go/issues).
+If you find a bug or have a feature request, please open a new issue in the [Issues](https://github.com/AzureAD/microsoft-authentication-library-for-go/issues) section.
 
-## Submit Feedback
+## Submit feedback
 
 If you have any library feedback, make sure to submit your feature requests and bug reports [on GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-go/issues).
 
-## Security Library
+## Security library
 
 This library controls how users sign-in and access services. We recommend you always take the latest version of our library in your app when possible. We use [semantic versioning](http://semver.org) so you can control the risk associated with updating your app. As an example, always downloading the latest minor version number (e.g. x.*y*.x) ensures you get the latest security and feature enhancements but our API surface remains the same. You can always see the latest version and release notes under the Releases tab of GitHub.
 
-## Security Reporting
+## Security reporting
 
 If you find a security issue with our libraries or services please report it to [secure@microsoft.com](mailto:secure@microsoft.com) with as much detail as possible. Your submission may be eligible for a bounty through the [Microsoft Bounty](http://aka.ms/bugbounty) program. Please do not post security issues to GitHub Issues or any other public site. We will contact you shortly upon receiving the information. We encourage you to get notifications of when security incidents occur by visiting [this page](https://technet.microsoft.com/en-us/security/dd252948) and subscribing to Security Advisory Alerts.
