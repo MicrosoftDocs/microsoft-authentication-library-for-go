@@ -1,34 +1,24 @@
+---
+title: Microsoft Authentication Library for Go Design Guide
+description: "Design guidelines for the Microsoft Authentication Library for Go."
+---
+
 # Microsoft Authentication Library for Go Design Guide
-
-## History
-
-The original code submitted for Go MSAL was a translation of either Java or .Net code.  This was done as a best effort by an intern who was attempting their first crack at Go.  It had a
-very interesting structure that didn't fit into Go style and made it difficult to understand or
-change. It used global locks, global variables, base type classes (mimicing inheritence), ...
-
-This probably should have be re-written from scratch, but we decided to try and do it in pieces.
-The lesson to be learned from this is that this type of refactor leads to re-writing the code 7 or 8 times instead of once. 
-
-Much of this lead to a re-write where we were not seeing the forrest because of the trees. Every small change would inevitably become some 60 file refactor and have much larger ramifications than intended.  
-
-The work could not be divided up, because the API and the internals were linked across logical
-boundaries.
-
-What has resulted should be a design that divides code into logical layers and splits
-the public API from the internal structure. 
 
 ## General Structure
 
-Public Surface:
-```
+Public Surface
+
+```bash
 apps/ - Contains all our code
   confidential/ - The confidential application API
   public/ - The public application API
   cache/ - The cache interface that can be implemented to provide persistence cache storage of credentials
 ```
 
-Internals:
-```
+Internals
+
+```bash
 apps/
   internal/
     client/ - Shared package for common calls that Public and Confidential apps share
@@ -46,9 +36,9 @@ This is documented here: https://golang.org/doc/go1.4#internalpackages
 
 For example, a package .../a/b/c/internal/d/e/f can be imported only by code in the directory tree rooted at .../a/b/c. It cannot be imported by code in .../a/b/g or in any other repository.
 
-We use this featurs quite liberally to make clear what is using an internal package.  For example:
+We use this feature quite liberally to make clear what is using an internal package.  For example:
 
-```
+```bash
 apps/internal/base - Only can be used by packages defined at apps/
 apps/internal/base/internal/storage - Only can be use by package client
 ```
@@ -57,9 +47,9 @@ apps/internal/base/internal/storage - Only can be use by package client
 
 The public API will be encapsulated in apps/.  apps/ has 3 packages of interest to users:
 
-- public/ - This is what MSAL calls the Public Application Client (service client)
-- confidential/ - This is what MSAL calls the Confidential Application Client (service)
-- cache/ - This provides the interfaces that must be implemented to create peristent caches for any MSAL client
+- `public/` - This is what MSAL calls the Public Application Client (service client)
+- `confidential/` - This is what MSAL calls the Confidential Application Client (service)
+- `cache/` - This provides the interfaces that must be implemented to create peristent caches for any MSAL client
 
 ## Internals
 
@@ -95,11 +85,10 @@ This is the general way to add a new feature to MSAL:
 
 The MSAL caching design is rather simple. These design decisions and the fact that multiple applications in different languages can share a cache mean it cannot be easily changed.
 
-The entire cache contents of a confidential.Client is read and written on 
-almost any action to and from an external cache. 
+The entire cache contents of a confidential.Client is read and written on almost any action to and from an external cache.
 
 It is not clear to a user that a confidential client should be per user to prevent scaling
-problems. 
+problems.
 
 We cannot change the MSAL cache design at this time, therefore it should be clear that
 confidential.Client should be done per user. This must go beyond a simple doc entry
@@ -113,12 +102,12 @@ The original version of this package used an thumbprint and a private key to do 
 based on a certificate. But there wasn't a real way to get a thumbprint.
 
 A thumbprint is defined in the Oauth spec, which we had to track down. It is an SHA-1 hash
-from the x509 certificate's DER encdoed ASN1 bytes. 
+from the x509 certificate's DER encdoed ASN1 bytes.
 
 Since the user was going to need the x509, we moved to having the user provide the x509.Certificate
-object. 
+object.
 
-We wrote the thumbprint creator for the internals. 
+We wrote the thumbprint creator for the internals.
 
 Since we also require the private key and it is not straightforward to get, we added a CertFromPEM()
 function that will extract the x509.Certificate and private key. We did support encrypted PEM.
@@ -138,6 +127,6 @@ cert in Keyvault.
 
 For errors, see [error design](../errors/error_design.md).
 
-This library does not log personal identifiable information (PII). For a definition of PII, see https://www.microsoft.com/en-us/trust-center/privacy/customer-data-definitions. MSAL Go does not log any of the 3 data categories listed there. 
+This library does not log personal identifiable information (PII). For a definition of PII, see https://www.microsoft.com/en-us/trust-center/privacy/customer-data-definitions. MSAL Go does not log any of the 3 data categories listed there.
 
 The library may log information related to your organization, such as tenant id, authority, client id etc. as well as information that cannot be tied to a user such as request correlation id, HTTP status codes etc.
