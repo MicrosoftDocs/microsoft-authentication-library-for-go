@@ -177,7 +177,7 @@ type AuthResult = base.AuthResult
 
 ## type Client
 
-Client is a representation of authentication client for confidential applications as defined in the package doc. A new Client should be created PER SERVICE USER. For more information, visit https://docs.microsoft.com/azure/active-directory/develop/msal-client-applications
+Client is a representation of authentication client for confidential applications as defined in the package doc. A new Client should be created PER SERVICE USER. For more information, see documentation on [MSAL client applications](/azure/active-directory/develop/msal-client-applications).
 
 ```go
 type Client struct {
@@ -227,7 +227,7 @@ Options: \[WithClaims\], \[WithTenantID\]
 func (cca Client) AcquireTokenOnBehalfOf(ctx context.Context, userAssertion string, scopes []string, opts ...AcquireOnBehalfOfOption) (AuthResult, error)
 ```
 
-AcquireTokenOnBehalfOf acquires a security token for an app using middle tier apps access token. Refer https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow.
+AcquireTokenOnBehalfOf acquires a security token for an app using middle tier apps access token. Refer to the [On Behalf Flow documentation](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow).
 
 Options: \[WithClaims\], \[WithTenantID\]
 
@@ -353,7 +353,7 @@ type Option func(o *clientOptions)
 func WithAzureRegion(val string) Option
 ```
 
-WithAzureRegion sets the region\(preferred\) or Confidential.AutoDetectRegion\(\) for auto detecting region. Region names as per https://azure.microsoft.com/en-ca/global-infrastructure/geographies/. See https://aka.ms/region-map for more details on region names. The region value should be short region name for the region where the service is deployed. For example "centralus" is short name for region Central US. Not all auth flows can use the regional token service. Service To Service \(client credential flow\) tokens can be obtained from the regional service. Requires configuration at the tenant level. Auto\-detection works on a limited number of Azure artifacts \(VMs, Azure functions\). If auto\-detection fails, the non\-regional endpoint will be used. If an invalid region name is provided, the non\-regional endpoint MIGHT be used or the token request MIGHT fail.
+WithAzureRegion sets the region\(preferred\) or Confidential.AutoDetectRegion\(\) for auto detecting region. Region names as defined [on the Azure site](https://azure.microsoft.com/global-infrastructure/geographies/). See https://aka.ms/region-map for more details on region names. The region value should be short region name for the region where the service is deployed. For example "centralus" is short name for region Central US. Not all auth flows can use the regional token service. Service To Service \(client credential flow\) tokens can be obtained from the regional service. Requires configuration at the tenant level. Auto\-detection works on a limited number of Azure artifacts \(VMs, Azure functions\). If auto\-detection fails, the non\-regional endpoint will be used. If an invalid region name is provided, the non\-regional endpoint MIGHT be used or the token request MIGHT fail.
 
 ### func WithCache
 

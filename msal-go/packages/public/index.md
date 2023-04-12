@@ -178,7 +178,7 @@ type AuthResult = base.AuthResult
 
 ## type Client
 
-Client is a representation of authentication client for public applications as defined in the package doc. For more information, visit https://docs.microsoft.com/azure/active-directory/develop/msal-client-applications.
+Client is a representation of authentication client for public applications as defined in the package doc. For more information, see [documentation on MSAL client applications](/azure/active-directory/develop/msal-client-applications).
 
 ```go
 type Client struct {
@@ -238,7 +238,7 @@ Options: \[WithClaims\], \[WithTenantID\]
 func (pca Client) AcquireTokenInteractive(ctx context.Context, scopes []string, opts ...AcquireInteractiveOption) (AuthResult, error)
 ```
 
-AcquireTokenInteractive acquires a security token from the authority using the default web browser to select the account. https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-authentication-flows#interactive-and-non-interactive-authentication
+AcquireTokenInteractive acquires a security token from the authority using the default web browser to select the account. See [documentation on interactive and non-interactive flows](/azure/active-directory/develop/msal-authentication-flows#interactive-and-non-interactive-authentication).
 
 Options: \[WithDomainHint\], \[WithLoginHint\], \[WithRedirectURI\], \[WithTenantID\]
 
