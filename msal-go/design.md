@@ -45,7 +45,7 @@ apps/internal/base/internal/storage - Only can be use by package client
 The public API is encapsulated in `apps/`.  `apps/` has 3 packages of interest to users:
 
 - `public/` - Covers the Public Application Client. These are apps that run on the user's computer, such as command line interface apps. 
-- `confidential/` - This is what MSAL calls the Confidential Application Client (service)
+- `confidential/` - Covers the Confidential Application Client. These are apps that run on servers - web apps, web APIs which get tokens for users and web APIs which get tokens on behalf of themselves (service to service communication)
 - `cache/` - This provides the interfaces that must be implemented to create persistent caches for any MSAL client
 
 ## Internals
