@@ -74,7 +74,7 @@ This is the general way to add a new feature to MSAL:
 
 ## Notable Differences To Other Clients
 
-### TBD: Confidential applications needs to handle multiple users without one big cache
+### Confidential applications needs to handle multiple users without one big cache
 
 The MSAL caching design is rather simple. These design decisions and the fact that multiple applications in different languages can share a cache mean it cannot be easily changed.
 
