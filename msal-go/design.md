@@ -54,7 +54,7 @@ In this section we will be talking about `internal/`.
 
 ### JSON Handling
 
-JSON must be handled specially in our app. The basics are, if we receive fields that our structs do not contain, we cannot drop them.  We must send them back to the service.
+JSON must be handled specially in our app. The basics are, if we receive fields that our structs do not contain, we cannot drop them, to ensure backwards and future compatibility.
 
 To handle that, we use our own custom `json` package that handles this.
 
