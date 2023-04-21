@@ -42,10 +42,10 @@ apps/internal/base/internal/storage - Only can be use by package client
 
 ## Public API
 
-The public API will be encapsulated in `apps/`.  `apps/` has 3 packages of interest to users:
+The public API is encapsulated in `apps/`.  `apps/` has 3 packages of interest to users:
 
-- `public/` - This is what MSAL calls the Public Application Client (service client)
-- `confidential/` - This is what MSAL calls the Confidential Application Client (service)
+- `public/` - Covers the Public Application Client. These are apps that run on the user's computer, such as command line interface apps. 
+- `confidential/` - Covers the Confidential Application Client. These are apps that run on servers - web apps, web APIs which get tokens for users and web APIs which get tokens on behalf of themselves (service to service communication)
 - `cache/` - This provides the interfaces that must be implemented to create persistent caches for any MSAL client
 
 ## Internals
@@ -54,7 +54,7 @@ In this section, we will be talking about `internal/`.
 
 ### JSON handling
 
-JSON must be handled specially in our app. The basics are, if we receive fields that our structs do not contain, we cannot drop them.  We must send them back to the service.
+JSON must be handled specially in our app. The basics are, if we receive fields that our structs do not contain, we cannot drop them, to ensure backwards and future compatibility.
 
 To handle that, we use our own custom `json` package that handles this.
 

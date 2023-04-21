@@ -6,7 +6,7 @@ description: "An introduction to using Microsoft Authentication Library (MSAL) f
 # Microsoft Authentication Library (MSAL) for Go
 
 >[!NOTE]
-> icrosoft Authentication Library (MSAL) for Go is a new addition to the MSAL family of libraries. It has been made available in production-ready preview to gauge customer interest and to gather feedback from the community. We welcome all contributors (see [contribution guidelines in the library repository](https://github.com/AzureAD/microsoft-authentication-library-for-go/blob/dev/CONTRIBUTING.md)) to help us improve the library.**
+> Microsoft Authentication Library (MSAL) for Go is a new addition to the MSAL family of libraries. It has been made available in production-ready preview to gauge customer interest and to gather feedback from the community. We welcome all contributors (see [contribution guidelines in the library repository](https://github.com/AzureAD/microsoft-authentication-library-for-go/blob/dev/CONTRIBUTING.md)) to help us improve the library.
 
 The Microsoft Authentication Library (MSAL) for Go is part of the [Microsoft identity platform for developers](https://aka.ms/aaddevv2). It allows you to sign in users or apps with Microsoft identities ([Azure AD](https://azure.microsoft.com/services/active-directory/) and [Microsoft Accounts](https://account.microsoft.com)) and obtain tokens to call APIs such as [Microsoft Graph](https://graph.microsoft.io/) or your own APIs registered with the Microsoft identity platform. It is built using industry standard OAuth2 and OpenID Connect protocols.
 
@@ -74,7 +74,7 @@ Acquiring tokens with MSAL Go follows this general three step pattern. There mig
     If there's no suitable token in the cache, or you choose to skip this step, send a request to Azure AD to obtain a token. There are different methods to acquire a token based on your application type and scenario. Here, we demonstrate a placeholder flow.
 
     ```go
-    result, err := publicClientApp.AcquireToken"ByOneofTheActualMethods"([]string{"your_scope"}, ...(other parameters depending on the function))
+    result, err := publicClientApp.AcquireTokenByOneofTheActualMethods([]string{"your_scope"}, ...(other parameters depending on the function))
     if err != nil {
         log.Fatal(err)
     }
