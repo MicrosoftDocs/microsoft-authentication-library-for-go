@@ -5,9 +5,9 @@ description: "Design guidelines for the Microsoft Authentication Library for Go.
 
 # Microsoft Authentication Library for Go Design Guide
 
-## General Structure
+## General structure
 
-Public Surface
+Public surface
 
 ```bash
 apps/ - Contains all our code
@@ -50,9 +50,9 @@ The public API will be encapsulated in `apps/`.  `apps/` has 3 packages of inter
 
 ## Internals
 
-In this section we will be talking about `internal/`.
+In this section, we will be talking about `internal/`.
 
-### JSON Handling
+### JSON handling
 
 JSON must be handled specially in our app. The basics are, if we receive fields that our structs do not contain, we cannot drop them.  We must send them back to the service.
 
@@ -64,7 +64,7 @@ Communication to the backends is done via the `requests/` package. `oauth.Token`
 
 `oauth.Token` communicates via REST calls that are encapsulated in the `ops/` client.
 
-## Adding A Feature
+## Adding a feature
 
 This is the general way to add a new feature to MSAL:
 
@@ -72,9 +72,9 @@ This is the general way to add a new feature to MSAL:
 - Add the higher level manipulations to `oauth.Token`
 - Add your logic to the `app/\<client\>` and access the services via your `oauth.Token`
 
-## Notable Differences To Other Clients
+## Notable differences to other clients
 
-### TBD: Confidential applications needs to handle multiple users without one big cache
+### Confidential applications needs to handle multiple users without one big cache
 
 The MSAL caching design is rather simple. These design decisions and the fact that multiple applications in different languages can share a cache mean it cannot be easily changed.
 

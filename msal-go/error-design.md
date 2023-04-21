@@ -9,6 +9,12 @@ description: "Error design guidelines for the Microsoft Authentication Library f
 
 Errors in MSAL are intended for app developers to troubleshoot and not for displaying to end-users.
 
+### MSAL error goals
+
+- Provide diagnostics to the user and for tickets that can be used to track down bugs or client misconfigurations
+- Detect errors that are transitory and can be retried
+- Allow the user to identify certain errors that the program can respond to, such a informing the user for the need to do an enrollment
+
 ### Go error handling vs. other languages
 
 Most modern languages use exception-based errors. Simply put, you "throw" an exception and it must be caught at some routine in the upper stack or it will eventually crash the program.
@@ -30,19 +36,13 @@ func (m MyCustomErr) Error() string { // This implements "error"
 }
 ```
 
-### MSAL error goals
-
-- Provide diagnostics to the user and for tickets that can be used to track down bugs or client misconfigurations
-- Detect errors that are transitory and can be retried
-- Allow the user to identify certain errors that the program can respond to, such a informing the user for the need to do an enrollment
-  
 ## Implementing client-side errors
 
 Client side errors indicate a misconfiguration or passing of bad arguments that is non-recoverable. Retrying isn't possible.
 
 These errors can simply be standard Go errors created by `errors.New()` or `fmt.Errorf()`. If down the line we need a custom error, we can introduce it, but for now the error messages just need to be clear on what the issue was.
 
-## Implementing Service Side Errors
+## Implementing server-side errors
 
 Service side errors occur when an external RPC responds either with an HTTP error code or returns a message that includes an error.
 
@@ -99,7 +99,7 @@ return nil, errors.CallErr{
     }
 ```
 
-## Future Decisions
+## Future decisions
 
 The ability to retry calls needs to have centralized responsibility. Either the user is doing it or the client is doing it.  
 

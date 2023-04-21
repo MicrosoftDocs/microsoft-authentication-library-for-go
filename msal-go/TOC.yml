@@ -1,8 +1,8 @@
 - name: Microsoft Authentication Library for Go
   href: index.md
-- name: Design Guide
+- name: Design guide
   href: design.md
-- name: Error Design
+- name: Error design
   href: error-design.md
 - name: Packages
   items:

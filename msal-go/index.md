@@ -71,7 +71,7 @@ Acquiring tokens with MSAL Go follows this general three step pattern. There mig
     }
     ```
 
-1. If there is no suitable token in the cache, or you choose to skip this step, now we can send a request to AAD to obtain a token.
+    If there's no suitable token in the cache, or you choose to skip this step, send a request to Azure AD to obtain a token. There are different methods to acquire a token based on your application type and scenario. Here, we demonstrate a placeholder flow.
 
     ```go
     result, err := publicClientApp.AcquireToken"ByOneofTheActualMethods"([]string{"your_scope"}, ...(other parameters depending on the function))
@@ -81,7 +81,7 @@ Acquiring tokens with MSAL Go follows this general three step pattern. There mig
     accessToken := result.AccessToken
     ```
 
-You can view the [dev apps](https://github.com/AzureAD/microsoft-authentication-library-for-go/tree/dev/apps/tests/devapps) on how to use MSAL Go with various application types in various scenarios. For more detailed information, please refer to the [wiki](https://github.com/AzureAD/microsoft-authentication-library-for-go/wiki).
+You can view the [developer sample apps](https://github.com/AzureAD/microsoft-authentication-library-for-go/tree/dev/apps/tests/devapps) on how to use MSAL Go with various application types in various scenarios.
 
 ## Releases
 
@@ -99,7 +99,7 @@ If you have any library feedback, make sure to submit your feature requests and 
 
 ## Security library
 
-This library controls how users sign-in and access services. We recommend you always take the latest version of our library in your app when possible. We use [semantic versioning](http://semver.org) so you can control the risk associated with updating your app. As an example, always downloading the latest minor version number (e.g. x.*y*.x) ensures you get the latest security and feature enhancements but our API surface remains the same. You can always see the latest version and release notes under the Releases tab of GitHub.
+This library controls how users sign-in and access services. We recommend using the latest version of our library in your app when possible. We use [semantic versioning](http://semver.org/) so you can control the risk associated with updating your app. As an example, always downloading the latest minor version number (e.g. x.y.x) ensures you get the latest security and feature enhancements but our API surface remains the same. You can always see the latest version and release notes under the [Releases tab on GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-go/releases).
 
 ## Security reporting
 
