@@ -1,0 +1,16 @@
+- name: Microsoft Authentication Library for Go
+  href: index.md
+- name: Design guide
+  href: design.md
+- name: Error design
+  href: error-design.md
+- name: Packages
+  items:
+  - name: public
+    href: packages/public/index.md
+  - name: confidential
+    href: packages/confidential/index.md
+  - name: errors
+    href: packages/errors/index.md
+  - name: cache
+    href: packages/cache/index.md
