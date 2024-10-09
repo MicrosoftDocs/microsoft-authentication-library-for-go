@@ -59,8 +59,8 @@
         "*/**.md": "ddelimarsky"
       },
       "ms.service": {
-        "*.md": "active-directory",
-        "*/**.md": "active-directory"
+        "*.md": "azure-active-directory",
+        "*/**.md": "azure-active-directory"
       },
       "titleSuffix": {
         "*.md": "Microsoft Authentication Library for Go",
