@@ -55,14 +55,14 @@ Following are the changes you need to make:
 - In the [`managedidentity_sample.go`](https://github.com/AzureAD/microsoft-authentication-library-for-go/blob/andyohart/managed-identity/apps/tests/devapps/managedidentity/managedidentity_sample.go) file under the getSecretFromAzureVault method modify the following values, 
 
     ```go
-        keyVaultUri := "your-key-vault-uri"
-	    secretName := "your-secret-name"
+    keyVaultUri := "your-key-vault-uri"
+    secretName := "your-secret-name"
     ```
 
 - Change these to match your key vault uri and secret name. These can be found in the following locations:
 
-1. Key Vault URI - In your Azure home page, go to your key vault, on the Overview page our key vault URI can be found under **'Essentials'**
-1. Secret Name - On the Key Vault Overview page, go to the Panel on the left and expand the **'Objects'** dropdown  
+1. **Key Vault URI** - In your Azure home page, go to your key vault, on the Overview page our key vault URI can be found under **'Essentials'**
+1. **Secret Name** - On the Key Vault Overview page, go to the Panel on the left and expand the **'Objects'** dropdown  
 Click into **'Secrets'**  
 Click into the secret you want to use  
 Click ont the version you would like to use  
@@ -70,13 +70,13 @@ Copy the part after the key vault URI and use that as your secret name
 
 ### Step 3:  Save and Run the Sample
 
-Save the file  
-In your terminal navigate to the `/apps/tests/devapps/managedidentity` directory  
-Run the sample with the command
+1. Save the file  
+1. In your terminal navigate to the `/apps/tests/devapps/managedidentity` directory  
+1. Run the sample with the command
     ```
         go run .
     ```  
-The sample you want to run is the one corresponding to **'9'**, so when prompted enter that and it should run and show you the result
+1. The sample you want to run is the one corresponding to **'9'**, so when prompted enter that and it should run and show you the result
 
 ## How to use managed identities
 

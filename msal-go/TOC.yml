@@ -17,4 +17,4 @@
 - name: Advanced topics
   items:
   - name: Managed identity
-  href: advanced/managed-identity.md
+    href: advanced/managed-identity.md
