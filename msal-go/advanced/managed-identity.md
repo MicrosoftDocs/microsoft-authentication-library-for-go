@@ -19,14 +19,14 @@ For a complete list, refer to [Azure services that can use managed identities to
 
 MSAL libraries provide lower level APIs that are closer to the OAuth2 and OIDC protocols. 
 
-Both MSAL GO and [Azure SDK](/articles/go/sdk/azure/identity-readme?view=azure-dotnet&preserve-view=true) allow to acquire tokens via managed identity. Internally, Azure SDK uses MSAL GO, and it provides a higher-level API via its `DefaultAzureCredential` and `ManagedIdentityCredential` abstractions. 
+Both MSAL GO and [Azure SDK](https://learn.microsoft.com/en-gb/azure/developer/go/) allow to acquire tokens via managed identity. Internally, Azure SDK uses MSAL GO, and it provides a higher-level API via its `DefaultAzureCredential` and `ManagedIdentityCredential` abstractions. 
 
 If your application already uses one of the SDKs, continue using the same SDK. Use Azure SDK, if you are writing a new application and plan to call other Azure resources, as this SDK provides a better developer experience by allowing the app to run on private developer machines where managed identity doesn't exist. Consider using MSAL if you need to call other downstream web APIs like Microsoft Graph or your own web API.
 
 ## Creating Azure Resources
 
-You can create the resources needed for running the sample manually via the [Azure Portal](https://portal.azure.com/#home), or for a quick and 
-concise breakdown of how to do it using Azure CLI or Azure Powershell, follow the instructions [here](https://learn.microsoft.com/en-gb/azure/developer/go/azure-sdk-authentication-managed-identity?tabs=azure-cli)
+You can create the resources needed for running the sample manually via the [Azure Portal](https://portal.azure.com/#home), or for a quick and
+concise breakdown of how to do it using Azure CLI or Azure Powershell, follow the instructions [here](/azure/developer/go/azure-sdk-authentication-managed-identity?tabs=azure-cli)
 
 ## Quick start
 
@@ -52,7 +52,7 @@ The GO sample is located in the [`/apps/tests/devapps/managedidentity`](https://
 
 Following are the changes you need to make:
 
-- In the [`managedidentity_sample.go`](https://github.com/AzureAD/microsoft-authentication-library-for-go/blob/andyohart/managed-identity/apps/tests/devapps/managedidentity/managedidentity_sample.go) file under the getSecretFromAzureVault method modify the following values, 
+- In the [`managedidentity_sample.go`](https://github.com/AzureAD/microsoft-authentication-library-for-go/blob/andyohart/managed-identity/apps/tests/devapps/managedidentity/managedidentity_sample.go) file under the getSecretFromAzureVault method modify the following values,
 
     ```go
     keyVaultUri := "your-key-vault-uri"
@@ -95,6 +95,7 @@ For system-assigned managed identities, simple pass **SystemAssigned()** to the 
 ```go
 mi.New(mi.SystemAssigned())
 ```
+
 [AcquireToken](https://github.com/AzureAD/microsoft-authentication-library-for-go/blob/c5febcbae287a26a0cfedd45f4edeaf3c41ad7dc/apps/managedidentity/managedidentity.go#L216) is called with the context, resource to acquire a token for, such as `https://management.azure.com`, along with any Optionals, discussed later
 
 ```go
@@ -144,4 +145,4 @@ Returned errors should contain some message to provide you with enough informati
 
 ### Potential errors
 
-For more information on the potential errors returned from the server, see this list of [error code references](https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes)
+For more information on the potential errors returned from the server, see this list of [error code references](/entra/identity-platform/reference-error-codes)
