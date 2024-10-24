@@ -14,3 +14,7 @@
     href: packages/errors/index.md
   - name: cache
     href: packages/cache/index.md
+- name: Advanced topics
+  items:
+  - name: Managed identity
+  href: advanced/managed-identity.md
