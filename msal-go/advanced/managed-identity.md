@@ -76,7 +76,7 @@ Copy the part after the key vault URI and use that as your secret name
     ```
         go run .
     ```  
-1. The sample you want to run is the one corresponding to **'9'**, so when prompted enter that and it should run and show you the result
+1. The sample you want to run is the one corresponding to option **'9'**, so when prompted enter that and it should run and show you the result
 
 ## How to use managed identities
 
