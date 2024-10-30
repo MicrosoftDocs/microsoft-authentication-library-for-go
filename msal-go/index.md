@@ -35,6 +35,7 @@ The Public API of the library can be found in the following directories under `a
 - `confidential` - The confidential application API
 - `public` - The public application API
 - `cache` - The cache interface that can be implemented to provide persistence cache storage of credentials
+- `managedidentity` - The Managed Identity API
 
 Acquiring tokens with MSAL Go follows this general three step pattern. There might be some slight differences for other token acquisition flows. Here is a basic example:
 
@@ -56,6 +57,8 @@ Acquiring tokens with MSAL Go follows this general three step pattern. There mig
     }
     confidentialClientApp, err := confidential.New("client_id", cred, confidential.WithAuthority("https://login.microsoftonline.com/Enter_The_Tenant_Name_Here"))
     ```
+    
+    for using Managed Identity application, see [managed identity](./advanced/managed-identity.md)
 
 1. MSAL comes packaged with an in-memory cache. Utilizing the cache is optional, but we would highly recommend it.
 
