@@ -1,6 +1,6 @@
 # Microsoft Authentication Library (MSAL) for Go
 
-[![Validate existing links](https://github.com/MicrosoftDocs/microsoft-authentication-library-for-go/actions/workflows/linkvalidator.yml/badge.svg)](https://github.com/MicrosoftDocs/microsoft-authentication-library-for-python/actions/workflows/linkvalidator.yml)
+[![Validate existing links](https://github.com/MicrosoftDocs/microsoft-authentication-library-for-go/actions/workflows/linkchecker.yml/badge.svg)](https://github.com/MicrosoftDocs/microsoft-authentication-library-for-go/actions/workflows/linkchecker.yml)
 
 This is the **documentation repository** for Microsoft Authentication Library (MSAL) for Go.
 
