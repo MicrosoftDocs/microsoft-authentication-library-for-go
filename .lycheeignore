@@ -7,3 +7,4 @@ https://account.microsoft.com.*
 https://azure.microsoft.com/overview/azure-stack.*
 https://azure.microsoft.com/products/kubernetes-service.*
 github.com/AzureAD/microsoft-authentication-library-for-go/apps/public
+http://localhost:port
