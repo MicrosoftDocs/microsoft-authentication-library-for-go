@@ -8,3 +8,4 @@ https://azure.microsoft.com/overview/azure-stack.*
 https://azure.microsoft.com/products/kubernetes-service.*
 github.com/AzureAD/microsoft-authentication-library-for-go/apps/public
 http://localhost:port
+file:///home/runner/work/microsoft-authentication-library-for-go/microsoft-authentication-library-for-go/msal-go/packages/public/http:/localhost:port
