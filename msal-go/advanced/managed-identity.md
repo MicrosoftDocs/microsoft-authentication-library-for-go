@@ -6,7 +6,7 @@ description: "How to use Azure managed identities in MSAL GO applications."
 # Managed Identity with MSAL GO
 
 >[!NOTE]
->This feature is available starting with [MSAL.GO](https://github.com/AzureAD/microsoft-authentication-library-for-go/releases/tag/v1.3.0-preview) version 1.3.0-preview
+>This feature is available starting with MSAL for Go version [`1.3.0-preview`](https://github.com/AzureAD/microsoft-authentication-library-for-go/releases/tag/v1.3.0-preview).
 
 A common challenge for developers is the management of secrets, credentials, certificates, and keys used to secure communication between services. [Managed identities](/azure/active-directory/managed-identities-azure-resources/overview) in Azure eliminate the need for developers to handle these credentials manually. MSAL GO supports acquiring tokens through the managed identity service when used with applications running inside Azure infrastructure, such as:
 
