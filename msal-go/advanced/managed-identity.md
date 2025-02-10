@@ -134,7 +134,7 @@ if err != nil {
 
 By default, MSAL GO supports in-memory caching  
 MSAL does not support cache extensibility for managed identity because of security concerns when using distributed cache  
-Since a token acquired for managed identity belongs to an Azure resource, using a distributed cache might expose it to the other Azure resources sharing the cache.
+Since a token acquired for a managed identity belongs to an Azure resource, using a distributed cache might expose it to other Azure resources sharing the cache.
 
 ## Troubleshooting and error handling
 
