@@ -17,11 +17,21 @@ For a complete list, refer to [Azure services that can use managed identities to
 
 ## Which SDK to use - Azure SDK or MSAL?
 
-MSAL libraries provide lower level APIs that are closer to the OAuth2 and OIDC protocols. 
+MSAL libraries provide lower level APIs that are closer to the OAuth2 and OIDC protocols.
 
 Both MSAL for Go and [Azure SDK for Go](/azure/developer/go/) allow you to acquire tokens via managed identity. Internally, Azure SDK uses MSAL for Go and it provides a higher-level API via its `DefaultAzureCredential` and `ManagedIdentityCredential` abstractions.
 
 If your application already uses one of the aforementioned SDKs, continue using the same SDK. Use Azure SDK if you are writing a new application and plan to call other Azure resources. Azure SDK provides a simpler developer experience by allowing the app to use local-ready APIs, such as `DefaultAzureCredential`, enabling testing on machines where managed identity doesn't exist. Consider using MSAL if you need to call other downstream web APIs like Microsoft Graph or your own web API.
+
+## How to use managed identities
+
+There are two types of managed identities available to developers **system-assigned** and **user-assigned**. You can learn more about the differences in the [Managed identity types](/entra/identity/managed-identities-azure-resources/overview#managed-identity-types) article. MSAL for Go supports acquiring tokens for both.  
+A quick overview of each is:
+
+**System Assigned** - Created and managed by Azure and tied to the lifecycle of a resource. When resource is deleted, so is the system assigned identity  
+**User Assigned** - Created as a standalone resource on Azure. It is not tied to any specific resource. Can be assigned to multiple resources and managed independently. Useful when you need multiple resources sharing same identity and permissions
+
+Prior to using managed identities from MSAL for Go, developers must enable them for the resources they want to use through Azure CLI or the Azure Portal.
 
 ## Creating Azure Resources
 
@@ -33,56 +43,6 @@ concise breakdown of how to do it using Azure CLI or Azure Powershell, follow th
 To quickly get started and see managed identity in action, you can use one of the samples:
 
 > [Use Managed Identity sample](https://github.com/Azure-Samples/msal-managed-identity/tree/main/src/go)
-
-## Running Locally
-
-### Step 1:  Clone or download this repository
-
-From your shell or command line:
-
-```Shell
-git clone https://github.com/AzureAD/microsoft-authentication-library-for-go.git
-```
-
-or download and extract the repository `.ZIP` file.
-
-The sample is located in the [`/apps/tests/devapps/managedidentity`](https://github.com/AzureAD/microsoft-authentication-library-for-go/blob/c5febcbae287a26a0cfedd45f4edeaf3c41ad7dc/apps/tests/devapps/managedidentity/managedidentity_sample.go) folder.
-
-### Step 2:  Modify the Key Vault URI and Secret name values in the code
-
-Make the following modifications in the code:
-
-- In the [`managedidentity_sample.go`](https://github.com/AzureAD/microsoft-authentication-library-for-go/blob/andyohart/managed-identity/apps/tests/devapps/managedidentity/managedidentity_sample.go) file under the `getSecretFromAzureVault` method modify the following values,
-
-    ```go
-    keyVaultUri := "your-key-vault-uri"
-    secretName := "your-secret-name"
-    ```
-
-- Change the details to match your Azure Key Vault URI and secret name. You can find them in the following locations:
-
-1. **Key Vault URI** - From the your Azure portal, go to your Key Vault. On the Overview page you will see the URI in the **Essentials** section.
-1. **Secret Name** - On the Key Vault overview page, go to the panel on the left and expand the **Objects** dropdown
-Click **Secrets**
-Click the secret you want to use
-Click the version you would like to use
-Copy the part following the Key Vault URI and use that as your secret name
-
-### Step 3: Save and run the sample
-
-1. Save the file  
-1. In your terminal navigate to the `/apps/tests/devapps/managedidentity` directory  
-1. Run the sample with the command
-    ```go
-        go run .
-    ```  
-1. The sample you want to run is the one corresponding to option **'9'**, so when prompted enter that and it should run and show you the result
-
-## How to use managed identities
-
-There are two types of managed identities available to developers **system-assigned** and **user-assigned**. You can learn more about the differences in the [Managed identity types](/entra/identity/managed-identities-azure-resources/overview#managed-identity-types) article. MSAL for Go supports acquiring tokens for both.
-
-Prior to using managed identities from MSAL for Go, developers must enable them for the resources they want to use through Azure CLI or the Azure Portal.
 
 ## Examples
 
@@ -140,9 +100,9 @@ Since a token acquired for a managed identity belongs to an Azure resource, usin
 
 Errors in MSAL are intended for app developers to troubleshoot and not for displaying to end-users.  
 
-For more information on how to handle errors from MSAL go see [error_design.md](https://github.com/AzureAD/microsoft-authentication-library-for-go/blob/andyohart/managed-identity/apps/errors/error_design.md)  
+For more information on how to handle errors from MSAL go see [error_design.md](https://learn.microsoft.com/en-us/entra/msal/go/error-design)  
 Returned errors (originating from the managed identity service) contain actionable context that will help you take mitigation steps.
 
 ### Potential errors
 
-For more information on potential errors returned from the managed identity service, refer to the [list of error codes](/entra/identity-platform/reference-error-codes).
+For more information on potential errors returned from the managed identity service, refer to the [list of error codes](/entra/identity-platform/reference-error-codes)
