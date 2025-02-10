@@ -145,4 +145,4 @@ Returned errors should contain some message to provide you with enough informati
 
 ### Potential errors
 
-For more information on the potential errors returned from the server, see this list of [error code references](/entra/identity-platform/reference-error-codes)
+For more information on potential errors returned from the managed identity service, refer to the [list of error codes](/entra/identity-platform/reference-error-codes).
