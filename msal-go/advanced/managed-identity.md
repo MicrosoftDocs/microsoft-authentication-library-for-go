@@ -100,7 +100,7 @@ Since a token acquired for a managed identity belongs to an Azure resource, usin
 
 Errors in MSAL are intended for app developers to troubleshoot and not for displaying to end-users.  
 
-For more information on how to handle errors from MSAL go see [error_design.md](https://learn.microsoft.com/en-us/entra/msal/go/error-design)  
+For more information on how to handle errors from MSAL go see [error_design.md](https://learn.microsoft.com/entra/msal/go/error-design)  
 Returned errors (originating from the managed identity service) contain actionable context that will help you take mitigation steps.
 
 ### Potential errors
