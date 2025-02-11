@@ -1,6 +1,7 @@
 ---
 title: Microsoft Authentication Library (MSAL) for Go
 description: "An introduction to using Microsoft Authentication Library (MSAL) for Go."
+ms.date: 02/11/2025
 ---
 
 # Microsoft Authentication Library (MSAL) for Go
