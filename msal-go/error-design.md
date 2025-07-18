@@ -1,6 +1,7 @@
 ---
 title: Microsoft Authentication Library for Go Error Design
 description: "Error design guidelines for the Microsoft Authentication Library for Go."
+ms.topic: article
 ---
 
 # Microsoft Authentication Library for Go Error Design
