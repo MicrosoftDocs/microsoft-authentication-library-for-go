@@ -131,6 +131,9 @@ type AcquireByDeviceCodeOption interface {
 
 ## type AcquireByUsernamePasswordOption
 
+>[!WARNING]
+> The AcquireTokenByUsernamePassword has been deprecated due to security risks. Microsoft recommends using a more secure authentication flow. Follow the official guidance on how to [Migrate from ROPC](https://aka.ms/msal-ropc-migration).
+
 AcquireByUsernamePasswordOption is implemented by options for AcquireTokenByUsernamePassword
 
 ```go
@@ -224,6 +227,8 @@ AcquireTokenByDeviceCode acquires a security token from the authority, by acquir
 Options: \[WithClaims\], \[WithTenantID\]
 
 ### func \(Client\) AcquireTokenByUsernamePassword
+>[!WARNING]
+> This Api has been deprecated due to security risks, use a more secure flow. Follow [this guide](https://aka.ms/msal-ropc-migration) for migration guidance.
 
 ```go
 func (pca Client) AcquireTokenByUsernamePassword(ctx context.Context, scopes []string, username, password string, opts ...AcquireByUsernamePasswordOption) (AuthResult, error)
