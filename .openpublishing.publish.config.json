@@ -27,5 +27,6 @@
       "branch_mapping": {}
     }
   ],
-  "branch_target_mapping": {}
+  "branch_target_mapping": {},
+  "targets": {}
 }
