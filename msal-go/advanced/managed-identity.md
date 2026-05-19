@@ -1,6 +1,8 @@
 ---
 title: Managed identity with MSAL GO
 description: "How to use Azure managed identities in MSAL GO applications."
+author: dickson-mwendia
+ms.author: dmwendia
 ms.date: 02/11/2025
 ---
 
