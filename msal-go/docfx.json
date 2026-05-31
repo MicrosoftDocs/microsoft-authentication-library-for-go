@@ -59,8 +59,8 @@
         "*/**.md": "Microsoft Authentication Library for Go"
       },
       "ms.topic": {
-        "*.md": "conceptual",
-        "*/**.md": "conceptual"
+        "*.md": "article",
+        "*/**.md": "article"
       }
     },
     "template": [],
