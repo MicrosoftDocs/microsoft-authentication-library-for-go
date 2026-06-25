@@ -13,6 +13,9 @@
 # Default owners for everything unless a later match takes precedence
 * @MicrosoftDocs/msecd-org
 
+# Specific folder overrides (include default team to retain their approval)
+# /FOLDER/ @MicrosoftDocs/msecd-org OPTIONAL_APPROVERS
+
 # Any repo changes beyond docs require PM owner approval.
 *                         @localden @jmprieur
 
