@@ -17,7 +17,7 @@
 # /FOLDER/ @MicrosoftDocs/msecd-org OPTIONAL_APPROVERS
 
 # Any repo changes beyond docs require PM owner approval.
-*                         @localden @jmprieur
+* @localden @jmprieur
 
 # Conceptual and API content needs the review of the engineering team.
-# /msal-go/*    @MicrosoftDocs/msecd-org @MicrosoftDocs/identity-sdk-cca-engineering-team
+/msal-go/ @MicrosoftDocs/msecd-org @MicrosoftDocs/identity-sdk-cca-engineering-team
