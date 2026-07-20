@@ -51,8 +51,8 @@
     },
     "fileMetadata": {
       "ms.service": {
-        "*.md": "azure-active-directory",
-        "*/**.md": "azure-active-directory"
+        "*.md": "entra-id",
+        "*/**.md": "entra-id"
       },
       "titleSuffix": {
         "*.md": "Microsoft Authentication Library for Go",
