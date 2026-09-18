@@ -13,11 +13,13 @@ on:
 jobs:
   linkChecker:
     permissions:
-      contents: write
+      contents: read
       issues: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3.7.0
+        with:
+          persist-credentials: false
 
       - name: Resolve root-relative links for checking
         run: |
@@ -30,17 +32,17 @@ jobs:
 
       - name: Link Checker
         id: lychee
-        uses: lycheeverse/lychee-action@master
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
+          token: ''
           args: --accept=200,429,403,502,503 --exclude 'http://localhost' --verbose --no-progress './**/*.md'
           fail: true
 
       - name: Create Issue From File
         if: always() && env.lychee_exit_code != 0 && github.event_name != 'pull_request'
-        uses: peter-evans/create-issue-from-file@main
+        uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6.0.0
         with:
+          token: ${{ github.token }}
           title: Link Checker Report
           content-filepath: ./lychee/out.md
           labels: report, automated issue
